@@ -1,0 +1,260 @@
+/* FormFit Modal Overlay */
+.formfit-modal-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: auto;
+  height: 100vh;
+  background: transparent;
+  z-index: 2147483647 !important;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  backdrop-filter: none;
+  animation: formfit-fade-in 0.15s ease-out;
+  padding: 10px;
+  pointer-events: none;
+}
+
+@keyframes formfit-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.formfit-modal {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  width: 320px;
+  max-height: calc(100vh - 20px);
+  overflow-y: auto;
+  animation: formfit-slide-in 0.2s ease-out;
+  pointer-events: all;
+  border: 2px solid #2563eb;
+}
+
+@keyframes formfit-slide-in {
+  from { 
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.formfit-modal-header {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 6px 6px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.formfit-modal-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.formfit-modal-close {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.formfit-modal-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.formfit-modal-body {
+  padding: 16px;
+}
+
+.formfit-requirements {
+  background: #f0f9ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 12px;
+}
+
+.formfit-requirements h3 {
+  margin: 0 0 8px 0;
+  font-size: 11px;
+  font-weight: 600;
+  color: #1e40af;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.formfit-req-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 6px 0;
+  font-size: 12px;
+  color: #334155;
+}
+
+.formfit-req-icon {
+  color: #2563eb;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.formfit-file-input-area {
+  border: 2px das6px;
+  padding: 20px 12px;
+  text-align: center;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: #f8fafc;
+}
+
+.formfit-upload-icon {
+  font-size: 32px;
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+
+.formfit-file-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #475569;
+  margin-bottom: 4px;
+}
+
+.formfit-file-hint {
+  font-size: 10px;
+  color: #94a3b8;
+}
+
+.formfit-file-info {
+  margin-top: 8px;
+  padding: 8px;
+  background: white;
+  border-radius: 4px;
+  font-size: 11px;
+  color: #334155;
+}
+
+.formfit-preview {
+  margin-top: 8px;
+  text-align: center;
+}
+
+.formfit-preview img {
+  max-width: 100%;
+  max-height: 120px;
+  border-radius: 4px;
+  border: 1dius: 8px;
+  border: 2px solid #e2e8f0;
+}
+
+.formfit-modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.formfit-btn {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align8px;
+  margin-top: 12px;
+}
+
+.formfit-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4-btn-primary:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.formfit-btn-secondary {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.formfit-btn-secondary:hover {
+  background: #e2e8f0;
+}
+
+.formfit-processing {
+  text-align: center;
+  padding: 12px;
+}
+
+.formfit-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: formfit-spin 0.8s linear infinite;
+  margin: 0 auto 10px;
+}
+
+.formfit-processing-text {
+  font-size: 12px;
+  color: #475569;
+  font-weight: 500;
+}
+
+.formfit-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin-top: 8px;
+  color: #991b1b;
+  font-size: 11px;
+}
+
+.formfit-success {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin-top: 8px;
+  color: #166534;
+  font-size: 11px;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FormFit</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>FormFit</h1>
+      </header>
+
+      <div class="field">
+        <label for="imageInput">Image</label>
+        <input id="imageInput" type="file" accept="image/*" />
+      </div>
+
+      <div class="grid">
+        <div class="field">
+          <label for="widthInput">Width (px)</label>
+          <input id="widthInput" type="number" min="1" placeholder="e.g., 200" />
+        </div>
+        <div class="field">
+          <label for="heightInput">Height (px)</label>
+          <input id="heightInput" type="number" min="1" placeholder="e.g., 200" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="sizeInput">Max size (KB)</label>
+        <input id="sizeInput" type="number" min="1" placeholder="e.g., 50" />
+      </div>
+
+      <div class="field">
+        <label for="formatSelect">Format</label>
+        <select id="formatSelect">
+          <option value="image/jpeg">JPEG</option>
+          <option value="image/png">PNG</option>
+        </select>
+      </div>
+
+      <div class="toggle">
+        <div>
+          <div class="toggle-title">Auto-process uploads</div>
+          <div class="toggle-sub">Automatically resize when you select a file</div>
+        </div>
+        <label class="switch">
+          <input id="autoProcessToggle" type="checkbox" />
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="toggle">
+        <div>
+          <div class="toggle-title">Floating buttons (global)</div>
+          <div class="toggle-sub">Show FormFit near file inputs</div>
+        </div>
+        <label class="switch">
+          <input id="floatingToggle" type="checkbox" />
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="toggle site-toggle">
+        <div>
+          <div class="toggle-title" id="siteLabel">This site</div>
+          <div class="toggle-sub" id="siteStatus">Using global setting</div>
+        </div>
+        <div class="toggle-actions">
+          <button id="siteResetBtn" class="link-btn" type="button">Use global</button>
+          <label class="switch">
+            <input id="siteToggle" type="checkbox" />
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <section class="manage" aria-labelledby="manageTitle">
+        <div class="manage-header">
+          <h2 id="manageTitle">Manage sites</h2>
+          <div class="manage-actions">
+            <button id="exportSitesBtn" class="btn ghost" type="button">Export</button>
+            <button id="importSitesBtn" class="btn ghost" type="button">Import</button>
+            <button id="clearSitesBtn" class="btn ghost danger" type="button">Clear all</button>
+            <input id="importSitesInput" type="file" accept="application/json" hidden />
+          </div>
+        </div>
+        <div id="siteList" class="site-list"></div>
+      </section>
+
+      <div class="actions">
+        <button id="smartUploadBtn" class="btn accent">Smart Resize &amp; Upload</button>
+        <button id="downloadBtn" class="btn primary">Resize &amp; Download</button>
+        <button id="uploadBtn" class="btn">Resize &amp; Upload to Page</button>
+      </div>
+
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+    </div>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
